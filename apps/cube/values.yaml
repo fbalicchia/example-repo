@@ -75,7 +75,7 @@ config:
 
   ## If true, enables development mode
   ##
-  devMode: false
+  devMode: true
 
   ## If true, enables debug logging
   ##
@@ -229,7 +229,7 @@ datasources:
   default:
     ## A database type supported by Cube
     ##
-    type:
+    type: postgres
 
     ## The URL for a database
     ##
@@ -573,7 +573,7 @@ api:
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 10
     periodSeconds: 30
     timeoutSeconds: 3
@@ -584,7 +584,7 @@ api:
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 10
     periodSeconds: 30
     timeoutSeconds: 3
@@ -637,7 +637,7 @@ workers:
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
   ##
   livenessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 10
     periodSeconds: 30
     timeoutSeconds: 3
@@ -648,7 +648,7 @@ workers:
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
   ##
   readinessProbe:
-    enabled: true
+    enabled: false
     initialDelaySeconds: 10
     periodSeconds: 30
     timeoutSeconds: 3

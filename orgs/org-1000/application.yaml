@@ -5,39 +5,30 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    name: kind-clusters
     namespace: default
     server: https://kubernetes.default.svc
-  project: 
+  project: default
   sources:
     - path: apps/jupyterhub
       repoURL: 'https://github.com/fbalicchia/example-repo.git'
-      targetRevision: local-test
       helm:
         valueFiles:
-          - "./jupyterhub-values.yaml"
-      skipCrds: true
+          - "./values.yaml"
     - path: apps/cube
       repoURL: 'https://github.com/fbalicchia/example-repo.git'
-      targetRevision: local-test
       helm:
         valueFiles:
-          - "./cube-values.yaml"
-      skipCrds: true
-    - path: apps/cubestore
-      repoURL: 'https://github.com/fbalicchia/example-repo.git'
-      targetRevision: local-test
-      helm:
-        valueFiles:
-          - "./cubestore-values.yaml"
-      skipCrds: true
+          - "./values.yaml"
+    # - path: apps/cubestore
+    #   repoURL: 'https://github.com/fbalicchia/example-repo.git'
+    #   helm:
+    #     valueFiles:
+    #       - "./values.yaml"
     - path: apps/trino
       repoURL: 'https://github.com/fbalicchia/example-repo.git'
-      targetRevision: local-test
       helm:
         valueFiles:
-          - "./trino-values.yaml"
-      skipCrds: true
+          - "./values.yaml"
   syncPolicy:
     syncOptions:
       - CreateNamespace=true 
