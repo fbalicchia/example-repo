@@ -11,6 +11,7 @@ spec:
   sources:
     - path: apps
       repoURL: 'https://github.com/fbalicchia/example-repo.git'
+      targetRevision: yet-layout
       helm:
         valueFiles:
           - "./values-1000.yaml"
