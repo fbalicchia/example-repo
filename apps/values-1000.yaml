@@ -1,0 +1,8 @@
+org: org-1000
+
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/fbalicchia/example-repo.git
+    targetRevision: yet-layout
