@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-applications
+  namespace: argocd
+spec:
+  destination:
+    name: kind-clusters
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: 
+  sources:
+    - path: apps/jupyterhub
+      repoURL: 'https://github.com/fbalicchia/example-repo.git'
+      targetRevision: local-test
+      helm:
+        valueFiles:
+          - "./jupyterhub-values.yaml"
+      skipCrds: true
+    - path: apps/cube
+      repoURL: 'https://github.com/fbalicchia/example-repo.git'
+      targetRevision: local-test
+      helm:
+        valueFiles:
+          - "./cube-values.yaml"
+      skipCrds: true
+    - path: apps/cubestore
+      repoURL: 'https://github.com/fbalicchia/example-repo.git'
+      targetRevision: local-test
+      helm:
+        valueFiles:
+          - "./cubestore-values.yaml"
+      skipCrds: true
+    - path: apps/trino
+      repoURL: 'https://github.com/fbalicchia/example-repo.git'
+      targetRevision: local-test
+      helm:
+        valueFiles:
+          - "./trino-values.yaml"
+      skipCrds: true
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true 
