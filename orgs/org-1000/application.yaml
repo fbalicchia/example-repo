@@ -8,27 +8,12 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   project: default
-  sources:
-    - path: apps/jupyterhub
+  source:
+    - path: apps
       repoURL: 'https://github.com/fbalicchia/example-repo.git'
       helm:
         valueFiles:
-          - "./values.yaml"
-    - path: apps/cube
-      repoURL: 'https://github.com/fbalicchia/example-repo.git'
-      helm:
-        valueFiles:
-          - "./values.yaml"
-    # - path: apps/cubestore
-    #   repoURL: 'https://github.com/fbalicchia/example-repo.git'
-    #   helm:
-    #     valueFiles:
-    #       - "./values.yaml"
-    - path: apps/trino
-      repoURL: 'https://github.com/fbalicchia/example-repo.git'
-      helm:
-        valueFiles:
-          - "./values.yaml"
+          - "./values-1000.yaml"
   syncPolicy:
     syncOptions:
       - CreateNamespace=true 
