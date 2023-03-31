@@ -5,7 +5,7 @@ metadata:
 spec:
   destination:
     name: ''
-    namespace: argocd
+    namespace: {{ .Values.orgId }}
     server: 'https://kubernetes.default.svc'
   sources:  
     - repoURL: 'https://prometheus-community.github.io/helm-charts'
