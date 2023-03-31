@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-org-147-staging
+spec:
+  destination:
+    name: ''
+    namespace: org-147
+    server: 'https://kubernetes.default.svc'
+  sources:
+    - repoURL: 'https://prometheus-community.github.io/helm-charts'
+      chart: prometheus
+      targetRevision: 15.7.1
+      helm:
+        valueFiles:
+        - $values/linked-values/prometheus-values.yaml
+        values: |-
+          server:
+            replicaCount: 2
+    - repoURL: 'https://github.com/fbalicchia/example-repo.git'
+      targetRevision: final-struct
+      ref: values
+  project: default
