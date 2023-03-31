@@ -8,15 +8,12 @@ spec:
     namespace: orgocd
     server: https://kubernetes.default.svc
   project: default
-  source:
+  sources:
+  - path: org-distribution
+    repoURL: 'https://github.com/fbalicchia/example-repo.git'
+    targetRevision: final-struct
     helm:
-      skipCrds: true
       values: |-
         orgId: org-147
-    path: org-distribution
-    repoURL: https://github.com/fbalicchia/example-repo.git
-    targetRevision: final-struct
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
-    - ApplyOutOfSyncOnly=true
+      # valueFiles:
+      #   - "./values-1000.yaml"
