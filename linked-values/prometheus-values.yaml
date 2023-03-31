@@ -1,4 +1,0 @@
-server:
-  ## Prometheus server container name
-  ##
-  name: server-argocd
