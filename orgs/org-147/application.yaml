@@ -13,7 +13,5 @@ spec:
     repoURL: 'https://github.com/fbalicchia/example-repo.git'
     targetRevision: final-struct
     helm:
-      values: |-
-        orgId: org-147
-      # valueFiles:
-      #   - "./values-1000.yaml"
+      valueFiles:
+         - "./values.yaml"
