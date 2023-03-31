@@ -14,4 +14,7 @@ spec:
     targetRevision: final-struct
     helm:
       valueFiles:
-         - "../../orgs/orgs-147/values.yaml"
+         - $values/orgs/org-147/values.yaml
+  - repoURL: 'https://github.com/fbalicchia/example-repo.git'
+    targetRevision: final-struct
+    ref: values
