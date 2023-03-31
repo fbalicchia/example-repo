@@ -14,4 +14,4 @@ spec:
     targetRevision: final-struct
     helm:
       valueFiles:
-         - "orgs/orgs-147/values.yaml"
+         - "../../orgs/orgs-147/values.yaml"
