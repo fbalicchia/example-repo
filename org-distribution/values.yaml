@@ -1,1 +1,4 @@
 testenv: "me"
+promtheus:
+  server:
+    replicaCount: 2

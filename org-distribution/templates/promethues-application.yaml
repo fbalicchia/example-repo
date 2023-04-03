@@ -14,9 +14,7 @@ spec:
       helm:
         valueFiles:
         - $values/values/prometheus-values.yaml
-        values: |-
-          server:
-            replicaCount: 2
+        values: {{ toYaml .Values.promethues | indent 4 }}
     - repoURL: 'https://github.com/fbalicchia/example-repo.git'
       targetRevision: final-struct
       ref: values
