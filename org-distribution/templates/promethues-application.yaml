@@ -12,12 +12,12 @@ spec:
       chart: prometheus
       targetRevision: 15.7.1
       helm:
-        valueFiles:
-        - $values/values/prometheus-values.yaml
       {{- with .Values.promethues }}
         values: 
           {{- toYaml . | nindent 10 }}
       {{- end}}
+      valueFiles:
+      - $values/values/prometheus-values.yaml
     - repoURL: 'https://github.com/fbalicchia/example-repo.git'
       targetRevision: final-struct
       ref: values
