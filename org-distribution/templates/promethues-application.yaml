@@ -14,7 +14,10 @@ spec:
       helm:
         valueFiles:
         - $values/values/prometheus-values.yaml
-        values: {{ toYaml .Values.promethues | indent 4 }}
+      {{- with .Values.promethues }}
+        values: 
+          {{- toYaml . | nindent 12 }}
+      {{- end}}
     - repoURL: 'https://github.com/fbalicchia/example-repo.git'
       targetRevision: final-struct
       ref: values

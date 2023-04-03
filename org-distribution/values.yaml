@@ -1,4 +1,1 @@
 testenv: "me"
-promethues:
-  server:
-    replicaCount: 2
