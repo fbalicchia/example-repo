@@ -14,7 +14,7 @@ spec:
       helm:
       {{- with .Values.promethues }}
         values: 
-          {{- toYaml . | nindent 10 }}
+          {{- toYaml . | nindent 12 }}
       {{- end}}
         valueFiles:
          - $values/values/prometheus-values.yaml
