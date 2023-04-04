@@ -27,7 +27,7 @@ spec:
       destination:
         namespace: '{{namespace}}'
         server: '{{url}}'
-      project: paas-infra-staging
+      project: default
       source:
         helm:
           ignoreMissingValueFiles: true
