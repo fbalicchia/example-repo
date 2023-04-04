@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: org-148-paas-local
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+  - path: org-distribution
+    repoURL: 'https://github.com/fbalicchia/example-repo.git'
+    targetRevision: final-struct
+    helm:
+      valueFiles:
+         - $values/orgs/org-148/values.yaml
+  - repoURL: 'https://github.com/fbalicchia/example-repo.git'
+    targetRevision: final-struct
+    ref: values
