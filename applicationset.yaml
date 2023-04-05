@@ -15,7 +15,7 @@ spec:
           files:
           - path: orgs/**/argo-config.yaml
           repoURL: https://github.com/fbalicchia/example-repo.git
-          revision: final-struct
+          revision: main
   syncPolicy:
     preserveResourcesOnDeletion: true
   template:
@@ -30,5 +30,5 @@ spec:
       project: default
       source:
         repoURL: https://github.com/fbalicchia/example-repo.git
-        targetRevision: final-struct
+        targetRevision: main
         path: 'orgs/{{namespace}}/'

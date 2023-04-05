@@ -19,6 +19,6 @@ spec:
         valueFiles:
          - $values/values/prometheus-values.yaml
     - repoURL: 'https://github.com/fbalicchia/example-repo.git'
-      targetRevision: final-struct
+      targetRevision: main
       ref: values
   project: default
