@@ -8,5 +8,3 @@ kubectl create ns org-148
 kubectl create ns paas-application-staging
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 #Check password
-#kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
-#kubectl edit secret argocd-secret -n argocd
