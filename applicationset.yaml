@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: paas-staging
+  namespace: argocd
+spec:
+  generators:
+  - matrix:
+      generators:
+      - list:
+          elements:
+          - cluster: in-cluster
+            url: https://kubernetes.default.svc
+      - git:
+          files:
+          - path: orgs/**/argo-config.yaml
+          repoURL: https://github.com/fbalicchia/example-repo.git
+          revision: final-struct
+  syncPolicy:
+    preserveResourcesOnDeletion: true
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/manifest-generate-paths: /{{path}}
+      name: '{{path.basename}}-paas-staging'
+    spec:
+      destination:
+        namespace: '{{namespace}}'
+        server: '{{url}}'
+      project: default
+      source:
+        repoURL: https://github.com/fbalicchia/example-repo.git
+        targetRevision: final-struct
+        path: 'orgs/{{namespace}}/'

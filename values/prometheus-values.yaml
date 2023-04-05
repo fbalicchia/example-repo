@@ -1,4 +1,5 @@
 server:
   ## Prometheus server container name
   ##
-  name: jonnyserver2
+  name: server-argocd2
+
