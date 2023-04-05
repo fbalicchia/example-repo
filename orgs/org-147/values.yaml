@@ -1,4 +1,4 @@
 orgId: org-147
 promethues:
   server:
-    replicaCount: 3
+    replicaCount: 1
