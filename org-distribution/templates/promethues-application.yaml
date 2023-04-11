@@ -18,9 +18,6 @@ spec:
       {{- end}}
         valueFiles:
          - $values/values/prometheus-values.yaml
-    - repoURL: 'https://github.com/bitnami/charts/tree/main/bitnami'
-      chart: nginx
-      targetRevision: 1.23.4  
     - repoURL: 'https://github.com/fbalicchia/example-repo.git'
       targetRevision: main
       ref: values

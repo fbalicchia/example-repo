@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-{{ .Values.orgId }}-staging
+spec:
+  destination:
+    name: ''
+    namespace: {{ .Values.orgId }}
+    server: 'https://kubernetes.default.svc'
+  sources:  
+    - repoURL: 'https://github.com/bitnami/charts/tree/main/bitnami'
+      chart: nginx
+      targetRevision: main
+  project: default
