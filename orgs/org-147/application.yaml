@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: org-147-paas-local
+  name: org-147-paas-staging-root
   namespace: argocd
 spec:
   destination:
