@@ -11,4 +11,9 @@ spec:
     - repoURL: 'https://charts.bitnami.com/bitnami'
       chart: nginx
       targetRevision: 13.2.33
+      helm:
+      {{- with .Values.nginx }}
+        values: |-
+          {{- toYaml . | nindent 12 }}
+      {{- end}}
   project: default
