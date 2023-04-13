@@ -8,7 +8,6 @@ spec:
   syncPolicy:
     automated: {}
   destination:
-    name: ''
     namespace: {{ .Values.orgId }}
     server: 'https://kubernetes.default.svc'
   sources:  
