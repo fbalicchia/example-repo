@@ -5,6 +5,8 @@ metadata:
    argocd.argoproj.io/sync-wave: "2"    
   name: nginx-{{ .Values.orgId }}-staging-bis
 spec:
+  syncPolicy:
+    automated: {}
   destination:
     name: ''
     namespace: {{ .Values.orgId }}
