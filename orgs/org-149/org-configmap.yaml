@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: org-149-config
+  namespace: paas-application-staging
+data:
+  ACCOUNT_ID: "xxxxxxxx"
+  AIRFLOW_ECR_REPOSITORY: org-149-notebook-images
+  CLOUD_AZ: a
+  FOLDER: "xyz,"
+  ORGANIZATION: org-149
+  ORGANIZATION_ID: "149"
+  REGION: eu-west-1
+  WORKBENCH_DOMAIN: platform.dev.fbalicchia.it
+  CUSTOMER_LABEL: ""

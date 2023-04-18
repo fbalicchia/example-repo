@@ -24,6 +24,12 @@ spec:
         argocd.argoproj.io/manifest-generate-paths: /{{path}}
       name: '{{path.basename}}-paas-staging'
     spec:
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
       destination:
         namespace: '{{namespace}}'
         server: '{{url}}'
