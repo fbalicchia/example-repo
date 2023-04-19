@@ -3,18 +3,21 @@
 generate () {
 	NUMBER_OF_WAVES=$(($1/$3))
 	CURRENT_WAVE=$((items_per_wave*-1))
+	STEP=0
+	CURRENT_ITEM_X_PAGE=1
+
+
 	for(( i=0; i<$1; i++ ))
 	do
 		APP_NUMBER=$(($2 + $i))
 		FULLNAME=nginx-application-$APP_NUMBER
 		echo $FULLNAME
-		if [ $i -gt 0 ]
+		if [ $CURRENT_ITEM_X_PAGE -gt $items_per_wave ]
 		then
-			STEP=$(($i%$NUMBER_OF_WAVES))
-			if [ $STEP -eq 0 ]
-			then
-				CURRENT_WAVE=$(($CURRENT_WAVE + 1))
-			fi
+			CURRENT_ITEM_X_PAGE=1
+			CURRENT_WAVE=$(($CURRENT_WAVE + 1))
+		else
+			CURRENT_ITEM_X_PAGE=$(($CURRENT_ITEM_X_PAGE + 1))
 		fi
 		cp ./template-apps/nginx-application-base.yaml ./org-distribution/templates/$FULLNAME.yaml
 		find ./org-distribution/templates/$FULLNAME.yaml -type f -exec sed -i '' -e 's/appnumber/'"$APP_NUMBER"'/g' {} \;
