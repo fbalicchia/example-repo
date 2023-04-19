@@ -5,3 +5,5 @@ promethues:
 nginx:
   service:
     type: ClusterIP
+  image:
+    pullPolicy: Always
