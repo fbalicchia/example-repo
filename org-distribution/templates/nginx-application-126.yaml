@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+   argocd.argoproj.io/sync-wave: "-99"    
+  name: nginx-{{ .Values.orgId }}-staging-126
+spec:
+  syncPolicy:
+    automated: {}
+  destination:
+    namespace: {{ .Values.orgId }}
+    server: 'https://kubernetes.default.svc'
+  sources:  
+    - repoURL: 'https://charts.bitnami.com/bitnami'
+      chart: nginx
+      targetRevision: 13.2.33
+      helm:
+      {{- with .Values.nginx }}
+        values: |-
+          {{- toYaml . | nindent 12 }}
+      {{- end}}
+  project: default
