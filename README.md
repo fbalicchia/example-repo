@@ -9,9 +9,9 @@ There are two scripts one that generates k8s namespaces and another one that gen
 for example typing 
 
 ```bash
-./generator-apps.sh 2 150
+./generator-apps.sh 100 100 10
 ```
-it generated two nginx application called 150 and 151
+it generated 100 nginx applications with 10 waves
 
 I the same ways `generator-org.sh` generate n namespaces from a base
 
