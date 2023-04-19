@@ -3,7 +3,8 @@ promethues:
   server:
     replicaCount: 2
 nginx:
-  commonLabels:
-    testlabel: value1
+  global:
+    commonLabels:
+      testlabel: value1
   service:
     type: ClusterIP
