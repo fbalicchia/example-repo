@@ -36,5 +36,5 @@ spec:
       project: default
       source:
         repoURL: https://github.com/fbalicchia/example-repo.git
-        targetrevision: tunig-syncparallel
+        targetRevision: tunig-syncparallel
         path: 'orgs/{{namespace}}/'

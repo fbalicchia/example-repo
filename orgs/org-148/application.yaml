@@ -11,10 +11,10 @@ spec:
   sources:
   - path: org-distribution
     repoURL: 'https://github.com/fbalicchia/example-repo.git'
-    targetrevision: tunig-syncparallel
+    targetRevision: tunig-syncparallel
     helm:
       valueFiles:
          - $values/orgs/org-148/values.yaml
   - repoURL: 'https://github.com/fbalicchia/example-repo.git'
-    targetrevision: tunig-syncparallel
+    targetRevision: tunig-syncparallel
     ref: values
