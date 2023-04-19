@@ -1,4 +1,0 @@
-orgId: org-149
-promethues:
-  server:
-    replicaCount: 3

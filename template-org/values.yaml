@@ -1,0 +1,7 @@
+orgId: orgnumber
+promethues:
+  server:
+    replicaCount: 2
+nginx:
+  service:
+    type: ClusterIP

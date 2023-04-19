@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: org-149-paas-staging-root
+  name: orgnumber-paas-staging-root
   namespace: argocd
 spec:
   destination:
@@ -11,10 +11,10 @@ spec:
   sources:
   - path: org-distribution
     repoURL: 'https://github.com/fbalicchia/example-repo.git'
-    targetRevision: main
+    targetRevision: tuning
     helm:
       valueFiles:
-         - $values/orgs/org-149/values.yaml
+         - $values/orgs/orgnumber/values.yaml
   - repoURL: 'https://github.com/fbalicchia/example-repo.git'
-    targetRevision: main
+    targetRevision: tuning
     ref: values
