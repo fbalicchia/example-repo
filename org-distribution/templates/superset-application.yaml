@@ -12,5 +12,5 @@ spec:
   sources:  
     - repoURL: http://apache.github.io/superset
       chart: superset
-      targetRevision: 2.1.0
+      targetRevision: 0.9.2
   project: default
