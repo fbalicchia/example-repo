@@ -10,7 +10,7 @@ spec:
     namespace: {{ .Values.orgId }}
     server: 'https://kubernetes.default.svc'
   sources:  
-    - repoURL: superset
+    - repoURL: http://apache.github.io/superset
       chart: superset
       targetRevision: 2.1.0
   project: default
