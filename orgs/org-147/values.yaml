@@ -32,6 +32,7 @@ airflow:
   statsd:
     enabled: false
   redis:
+    enabled: false
     persistence: false
 trino:
   server:
