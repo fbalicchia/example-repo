@@ -5,16 +5,57 @@ jupyterhub:
   prePuller:
     hook:
       enabled: false
+    continuous:
+      enabled: false
   scheduling:
     userScheduler:
       enabled: false
   singleuser:
     storage:
       capacity: 1Gi
+promethues:
+  server:
+    replicaCount: 2
+airflow:
+  workers:
+    livenessProbe:
+      enabled: false
+    persistence:
+      size: 1Gi
+  migrateDatabaseJob:
+    enabled: false
+  triggerer:
+    enabled: false
+    persistence:
+      enabled: false
+      size: 1Gi
+  statsd:
+    enabled: false
+  redis:
+    persistence: false
+trino:
+  server:
+    workers: 1
+  query:
+    maxMemory: "1GB"
 
+  coordinator:
+    jvm:
+      maxHeapSize: "2G"
+      gcMethod:
+        type: "UseG1GC"
+        g1:
+          heapRegionSize: "32M"
 
-
-
-
-  
-
+    config:
+      memory:
+        heapHeadroomPerNode: ""
+      query:
+        maxMemoryPerNode: "1GB"
+  worker:
+    jvm:
+      maxHeapSize: "2G"
+      gcMethod:
+        type: "UseG1GC"
+        g1:
+          heapRegionSize: "32M"

@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: jupyterhub-{{ .Values.orgId }}-staging
+  name: trino-{{ .Values.orgId }}-staging
 spec:
   destination:
     namespace: {{ .Values.orgId }}
     server: 'https://kubernetes.default.svc'
   sources:  
-    - repoURL: 'https://jupyterhub.github.io/helm-chart/'
-      chart: jupyterhub
-      targetRevision: 2.0.0
+    - repoURL: 'https://trinodb.github.io/charts/'
+      chart: trino
+      targetRevision: 0.10.2
       helm:
-      {{- with .Values.jupyterhub }}
+      {{- with .Values.trino }}
         values: |-
           {{- toYaml . | nindent 12 }}
       {{- end}}

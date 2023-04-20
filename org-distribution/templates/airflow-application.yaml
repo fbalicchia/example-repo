@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: jupyterhub-{{ .Values.orgId }}-staging
+  name: airflow-{{ .Values.orgId }}-staging
 spec:
   destination:
     namespace: {{ .Values.orgId }}
     server: 'https://kubernetes.default.svc'
   sources:  
-    - repoURL: 'https://jupyterhub.github.io/helm-chart/'
-      chart: jupyterhub
-      targetRevision: 2.0.0
+    - repoURL: 'https://airflow.apache.org/'
+      chart: airflow
+      targetRevision: 1.9.0
       helm:
-      {{- with .Values.jupyterhub }}
+      {{- with .Values.airflow }}
         values: |-
           {{- toYaml . | nindent 12 }}
       {{- end}}

@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-{{ .Values.orgId }}-staging
+spec:
+  destination:
+    namespace: {{ .Values.orgId }}
+    server: 'https://kubernetes.default.svc'
+  sources:  
+    - repoURL: 'https://prometheus-community.github.io/helm-charts'
+      chart: prometheus
+      targetRevision: 15.7.1
+      helm:
+      {{- with .Values.promethues }}
+        values: |-
+          {{- toYaml . | nindent 12 }}
+      {{- end}}
+        valueFiles:
+         - $values/values/prometheus-values.yaml
+    - repoURL: 'https://github.com/fbalicchia/example-repo.git'
+      targetRevision: complex-charts
+      ref: values
+  project: default
