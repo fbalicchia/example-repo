@@ -2,3 +2,15 @@ orgId: org-148
 promethues:
   server:
     replicaCount: 3
+jupyterhub:
+  cull:
+    enabled: false 
+  prePuller:
+    hook:
+      enabled: false
+  scheduling:
+    userScheduler:
+      enabled: false
+  singleuser:
+    storage:
+      capacity: 1Gi
