@@ -16,24 +16,6 @@ jupyterhub:
 promethues:
   server:
     replicaCount: 2
-airflow:
-  workers:
-    livenessProbe:
-      enabled: false
-    persistence:
-      size: 1Gi
-  migrateDatabaseJob:
-    enabled: false
-  triggerer:
-    enabled: false
-    persistence:
-      enabled: false
-      size: 1Gi
-  statsd:
-    enabled: false
-  redis:
-    enabled: false
-    persistence: false
 trino:
   server:
     workers: 1
