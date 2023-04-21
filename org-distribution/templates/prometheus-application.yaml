@@ -28,6 +28,6 @@ spec:
         valueFiles:
          - $values/values/prometheus-values.yaml
     - repoURL: 'https://github.com/fbalicchia/example-repo.git'
-      targetRevision: complex-charts
+      targetRevision: complex-charts-autosync-enabled
       ref: values
   project: default
