@@ -1,3 +1,5 @@
+# Global value that can be used for as crosscutting concern configuration for all orgs.
+
 server:
   ## Prometheus server container name
   ##

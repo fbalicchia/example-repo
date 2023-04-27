@@ -1,3 +1,5 @@
+# Organization configuration that follow helm templating rules for argoproj.io/v1alpha1 Application Spec
+# this means that here we can applied all techniques used in helm 
 orgId: org-147
 jupyterhub:
   cull:
