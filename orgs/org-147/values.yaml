@@ -5,7 +5,7 @@ orgId: org-147
 jupyterhub:
   # start custom parameters
   # if true enabled the installation of jupyterhub application installation
-  enabledApplication : true
+  enabledApplication : "True"
   chartRevision: 2.0.0
 
   ## end custom parameters
