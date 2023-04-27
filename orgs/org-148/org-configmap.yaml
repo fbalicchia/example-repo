@@ -1,3 +1,4 @@
+## Configmap necessary to make magic on configurations
 apiVersion: v1
 kind: ConfigMap
 metadata:

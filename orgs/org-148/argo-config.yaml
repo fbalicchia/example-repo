@@ -1,3 +1,7 @@
-releaseName: org-148-paas-staging-root
+##
+# The configuration file that bridges applications created by applications with 
+# application 2 application entry points
+##
+releaseName: org-148-paas-staging-entrypoint
 namespace: org-148
 targetRevision: complex-charts

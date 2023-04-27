@@ -1,3 +1,7 @@
+##
+# The configuration file that bridges applications created by applications with 
+# application 2 application entry points
+##
 releaseName: org-147-paas-staging-entrypoint
-#namespace: org-147
+namespace: org-147
 targetRevision: complex-charts
