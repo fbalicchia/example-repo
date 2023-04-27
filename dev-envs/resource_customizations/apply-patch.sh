@@ -1,0 +1,1 @@
+kubectl patch configmap -n argocd argocd-cm --type merge --patch-file applications_patch.yaml
