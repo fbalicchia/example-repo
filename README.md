@@ -1,4 +1,4 @@
-# example-repo
+# Example-repo
 Repo used for experiments Argocd Ecosystem. The goal of this branch is to understand how to tune the system based on the number
 of installed applications.
 
@@ -19,3 +19,7 @@ I the same ways `generator-org.sh` generate n namespaces from a base
 ./generator-org.sh 2 150
 ```
 it generated two namespaces called 150 and 151
+
+
+# Notes
+Application Dependencies can be useful in our env only in the first installation. When auto sync is enabled needs to be done manually
