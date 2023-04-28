@@ -1,3 +1,4 @@
+{{- if .Values.applications.prometheus.enabled -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -9,7 +10,7 @@ spec:
   sources:  
     - repoURL: 'https://prometheus-community.github.io/helm-charts'
       chart: prometheus
-      targetRevision: 15.7.1
+      targetRevision: {{ .Values.applications.prometheus.chartsTargetRevision }}
       helm:
       {{- with .Values.promethues }}
         values: |-
@@ -21,3 +22,4 @@ spec:
       targetRevision: charts-ns
       ref: values
   project: default
+{{- end }}

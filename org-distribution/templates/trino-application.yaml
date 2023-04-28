@@ -1,3 +1,4 @@
+{{- if .Values.applications.trino.enabled -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -19,10 +20,11 @@ spec:
   sources:  
     - repoURL: 'https://trinodb.github.io/charts/'
       chart: trino
-      targetRevision: 0.10.2
+      targetRevision: {{ .Values.applications.trino.chartsTargetRevision }}
       helm:
       {{- with .Values.trino }}
         values: |-
           {{- toYaml . | nindent 12 }}
       {{- end}}
   project: default
+{{- end }}
