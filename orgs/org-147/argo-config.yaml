@@ -1,3 +1,4 @@
+# The scope of this file is to link configuration between application created by applicationSet and application-2-application pattern
 releaseName: org-147-paas-staging-entrypoint
 namespace: org-147
 targetRevision: charts-ns

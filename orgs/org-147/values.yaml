@@ -1,6 +1,14 @@
 orgId: org-147
-chartsTargetRevision:
-  jupyterHub: 2.0.0
+
+##
+# Version need to be put in this section and not in the values charts
+##
+applications:
+  jupyterhub:
+    enabled: false
+    chartsTargetRevision: 2.0.0
+
+
 jupyterhub:
   cull:
     enabled: false 

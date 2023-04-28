@@ -1,3 +1,4 @@
+{{- if .Values.applications.jupyterhub.enabled -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -19,10 +20,11 @@ spec:
   sources:  
     - repoURL: 'https://jupyterhub.github.io/helm-chart/'
       chart: jupyterhub
-      targetRevision: {{ .Values.chartsTargetRevision.jupyterHub }}
+      targetRevision: {{ .Values.applications.jupyterhub.chartsTargetRevision }}
       helm:
       {{- with .Values.jupyterhub }}
         values: |-
           {{- toYaml . | nindent 12 }}
       {{- end}}
   project: default
+  {{- end }}
