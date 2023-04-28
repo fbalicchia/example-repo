@@ -19,7 +19,7 @@ spec:
   sources:  
     - repoURL: 'https://jupyterhub.github.io/helm-chart/'
       chart: jupyterhub
-      targetRevision: 2.0.0
+      targetRevision: {{ .Values.jupyterhub.targetRevision }}
       helm:
       {{- with .Values.jupyterhub }}
         values: |-
