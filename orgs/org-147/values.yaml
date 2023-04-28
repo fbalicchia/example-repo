@@ -1,6 +1,7 @@
 orgId: org-147
+chartsTargetRevision:
+  jupyterHub: 2.0.0
 jupyterhub:
-  targetRevision: 2.0.0
   cull:
     enabled: false 
   prePuller:
