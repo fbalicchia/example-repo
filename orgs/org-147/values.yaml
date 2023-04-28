@@ -5,7 +5,7 @@ orgId: org-147
 ##
 applications:
   jupyterhub:
-    enabled: false
+    enabled: true
     chartsTargetRevision: 2.0.0
 
 
