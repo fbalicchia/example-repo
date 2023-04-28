@@ -1,1 +1,5 @@
-testenv: "me"
+applications:
+  jupyterhub:
+    enabled: true
+    chartsTargetRevision: 2.0.0
+
