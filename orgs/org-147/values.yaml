@@ -7,6 +7,9 @@ applications:
   jupyterhub:
     enabled: true
     chartsTargetRevision: 2.0.0
+  promethues:
+    enabled: false
+    chartsTargetRevision: 15.7.1
 
 
 jupyterhub:

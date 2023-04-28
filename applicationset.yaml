@@ -15,7 +15,7 @@ spec:
           files:
           - path: orgs/**/argo-config.yaml
           repoURL: https://github.com/fbalicchia/example-repo.git
-          revision: charts-ns
+          revision: charts-ns-feature-branch-test
   syncPolicy:
     preserveResourcesOnDeletion: true
   template:
@@ -36,5 +36,5 @@ spec:
       project: default
       source:
         repoURL: https://github.com/fbalicchia/example-repo.git
-        targetRevision: charts-ns
+        targetRevision: charts-ns-feature-branch-test
         path: 'orgs/{{namespace}}/'
