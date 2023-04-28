@@ -1,5 +1,5 @@
 applications:
   jupyterhub:
-    enabled: true
+    enabled: false
     chartsTargetRevision: 2.0.0
 
